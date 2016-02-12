@@ -9,10 +9,11 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-;; disable the menu bar
+;; fix the emacs ui
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (blink-cursor-mode -1)
+(scroll-bar-mode -1)
 
 ;; nice scrolling
 (setq scroll-margin 0
@@ -28,9 +29,6 @@
 
 ;; start emacs in fullscreen
 (toggle-frame-fullscreen)
-
-;; disable scroll-bar
-(scroll-bar-mode -1)
 
 ;; switch mac control and meta buttons
 (setq mac-command-modifier 'control)
@@ -50,30 +48,16 @@
 ;; load spacemacs theme
 (load-theme 'spacemacs-dark t)
 
-;; delete file and buffer
-(defun delete-file-and-buffer ()
-  "Kill the current buffer and deletes the file it is visiting."
-  (interactive)
-  (let ((filename (buffer-file-name)))
-    (when filename
-      (if (vc-backend filename)
-          (vc-delete-file filename)
-        (when (y-or-n-p (format "Are you sure you want to delete %s? " filename))
-          (delete-file filename delete-by-moving-to-trash)
-          (message "Deleted file %s" filename)
-          (kill-buffer))))))
-
-(global-set-key (kbd "C-c D") 'delete-file-and-buffer)
-
-;; kill-whole-line with indentation
-(defun prelude-kill-whole-line (&optional arg)
-  "A simple wrapper around command `kill-whole-line' that respects indentation.
-Passes ARG to command `kill-whole-line' when provided."
-  (interactive "p")
-  (kill-whole-line arg)
-  (back-to-indentation))
-
-(global-set-key (kbd "C-c k") 'prelude-kill-whole-line)
+;; enable crux
+(require 'crux)
+(global-set-key (kbd "C-c I") #'crux-find-user-init-file)
+(global-set-key (kbd "C-c D") #'crux-delete-file-and-buffer)
+(global-set-key (kbd "C-c s") #'crux-swap-windows)
+(global-set-key (kbd "C-c k") #'crux-kill-other-buffers)
+(global-set-key (kbd "s-j") #'crux-top-join-line)
+(global-set-key (kbd "C-c r") #'crux-rename-file-and-buffer)
+(global-set-key (kbd "C-c S") #'crux-find-shell-init-file)
+(global-set-key (kbd "s-k") #'crux-kill-whole-line)
 
 ;; Helm-bindings for common actions
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -86,9 +70,10 @@ Passes ARG to command `kill-whole-line' when provided."
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-c b") 'magit-blame)
 
-;; Move text
-(global-set-key [control shift up]  'move-text-up)
-(global-set-key [(control shift down)]  'move-text-down)
+;; avy and ace-window
+(global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "s-.") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "s-w") 'ace-window)
 
 ;; enable guru-global-mode
 (guru-global-mode +1)
