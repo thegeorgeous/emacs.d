@@ -4,16 +4,13 @@
 
 ;;; Code:
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
 ;; fix the emacs ui
 (tool-bar-mode -1) ;; No toolbars
 (blink-cursor-mode -1) ;; No blinking cursor
 (scroll-bar-mode -1) ;; No ugly scrollbar
+(setq ring-bell-function 'ignore)
 
 ;; Newline at end of file
 (setq require-final-newline t)
@@ -61,13 +58,16 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("20e359ef1818a838aff271a72f0f689f5551a27704bf1c9469a5c2657b417e6c" default)))
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "824c02fec7dfb3affca5f5a3b8dddfb8ded6e23ba82b8a1c72191d66f2418b8c" "20e359ef1818a838aff271a72f0f689f5551a27704bf1c9469a5c2657b417e6c" default)))
  '(global-company-mode t)
+ '(helm-mode t)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(package-selected-packages
    (quote
-    (company-inf-ruby beacon zop-to-char scss-mode diminish spaceline smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window))))
+    (rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish spaceline smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
+ '(show-smartparens-global-mode t))
 
+(diminish 'helm-mode)
 ;; switch mac control and meta buttons
 (setq mac-command-modifier 'control)
 (setq mac-control-modifier 'super)
@@ -89,6 +89,25 @@
 ;; load the spaceline modeline theme
 (require 'spaceline-config)
 (spaceline-emacs-theme)
+(setq powerline-default-separator 'wave)
+;; move text up and down
+(defun move-line-up ()
+  "Move up the current line."
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2)
+  (indent-according-to-mode))
+
+(defun move-line-down ()
+  "Move down the current line."
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(global-set-key [(control shift up)]  'move-line-up)
+(global-set-key [(control shift down)]  'move-line-down)
 
 ;; whitespace-mode config
 (require 'whitespace)
@@ -98,17 +117,23 @@
 (global-whitespace-mode t)
 ;; Remove trailing whitespace on save
 (add-hook 'before-save-hook 'whitespace-cleanup t)
+(diminish 'global-whitespace-mode)
 
+;; CamelCase aware editing
+(add-hook 'prog-mode-hook 'subword-mode)
+(diminish 'subword-mode)
 ;; enable crux
 (require 'crux)
 (global-set-key (kbd "C-c I") #'crux-find-user-init-file)
 (global-set-key (kbd "C-c D") #'crux-delete-file-and-buffer)
-(global-set-key (kbd "C-c s") #'crux-swap-windows)
+(global-set-key (kbd "C-c s") #'crux-transpose-windows)
 (global-set-key (kbd "C-c k") #'crux-kill-other-buffers)
 (global-set-key (kbd "s-j") #'crux-top-join-line)
 (global-set-key (kbd "C-c r") #'crux-rename-file-and-buffer)
 (global-set-key (kbd "C-c S") #'crux-find-shell-init-file)
 (global-set-key (kbd "s-k") #'crux-kill-whole-line)
+(global-set-key (kbd "C-c n") #'crux-cleanup-buffer-or-region)
+(global-set-key (kbd "C-c TAB") #'crux-indent-rigidly-and-copy-to-clipboard)
 (global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
 
 
@@ -118,6 +143,14 @@
 ;; Emacs-Lisp mode keys
 (eval-after-load "Emacs-Lisp"
   (define-key emacs-lisp-mode-map (kbd "C-c C-b") 'eval-buffer))
+
+;; Org-src-mode
+(defun org-edit-src-save-and-exit ()
+  "Save org source code edit buffer and exit."
+  (interactive)
+  (org-edit-src-save)
+  (org-edit-src-exit))
+(global-set-key (kbd "C-c C-e") 'org-edit-src-save-and-exit)
 
 ;; helm-mode by default
 (require 'helm)
@@ -145,6 +178,7 @@
 (require 'guru-mode)
 (guru-global-mode +1)
 (setq guru-warn-only t)
+(diminish 'guru-mode)
 
 ;; enable projectile-globally
 (projectile-global-mode)
@@ -172,13 +206,14 @@
 
 ;; enable helm bindings for projectile
 (helm-projectile-on)
-(spaceline-helm-mode)
+;; (spaceline-helm-mode)
 
 ;; global-smartparens
 (require 'smartparens-config)
 (require 'smartparens-ruby)
 (smartparens-global-mode)
 (show-smartparens-global-mode t)
+(diminish 'smartparens-mode)
 
 ;; Enable multiple-cursors-mode
 (require 'multiple-cursors)
