@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+;; enable melpa packages
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 ;; fix the emacs ui
@@ -44,10 +48,11 @@
 ;; disable the splash screen
 (setq inhibit-startup-message t)
 
-;; enable melpa packages
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 ;; start emacs in fullscreen
 (toggle-frame-fullscreen)
@@ -58,13 +63,13 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "824c02fec7dfb3affca5f5a3b8dddfb8ded6e23ba82b8a1c72191d66f2418b8c" "20e359ef1818a838aff271a72f0f689f5551a27704bf1c9469a5c2657b417e6c" default)))
+    ("8aa7eb0cc23931423f719e8b03eb14c4f61aa491e5377073d6a55cba6a7bc125" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "824c02fec7dfb3affca5f5a3b8dddfb8ded6e23ba82b8a1c72191d66f2418b8c" "20e359ef1818a838aff271a72f0f689f5551a27704bf1c9469a5c2657b417e6c" default)))
  '(global-company-mode t)
  '(helm-mode t)
- '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(initial-frame-alist (quote ((fullscreen . fullboth))))
  '(package-selected-packages
    (quote
-    (rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish spaceline smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
+    (gotham-theme rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish spaceline smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
  '(show-smartparens-global-mode t))
 
 (diminish 'helm-mode)
@@ -121,7 +126,10 @@
 
 ;; CamelCase aware editing
 (add-hook 'prog-mode-hook 'subword-mode)
-(diminish 'subword-mode)
+(with-eval-after-load 'subword
+  (diminish 'subword-mode))
+(global-subword-mode +1)
+
 ;; enable crux
 (require 'crux)
 (global-set-key (kbd "C-c I") #'crux-find-user-init-file)
@@ -145,6 +153,8 @@
   (define-key emacs-lisp-mode-map (kbd "C-c C-b") 'eval-buffer))
 
 ;; Org-src-mode
+(declare-function org-edit-src-save "org" nil)
+(declare-function org-edit-src-exit "org" nil)
 (defun org-edit-src-save-and-exit ()
   "Save org source code edit buffer and exit."
   (interactive)
@@ -224,5 +234,7 @@
 ;; Highlight the current line
 (global-hl-line-mode +1)
 
+;; Enable robe-mode
+(add-hook 'ruby-mode-hook 'robe-mode)
 (provide 'init)
 ;;; init.el ends here
