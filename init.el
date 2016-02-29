@@ -39,7 +39,7 @@
 
 ;; Always reload the file if it changed on disk
 (global-auto-revert-mode 1)
-
+(diminish 'auto-revert-mode)
 ;; nice scrolling
 (setq scroll-margin 0
       scroll-conservatively 100000
