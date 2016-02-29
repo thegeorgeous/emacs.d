@@ -210,7 +210,7 @@
 ;; Start a regular shell
 (global-set-key (kbd "C-x M-m") 'shell)
 
-;; set flycheck configytttttgurations
+;; set flycheck configurations
 (require 'flycheck)
 (setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop") ;; set rubocop executable
 (setq flycheck-eslintrc "~/.eslintrc") ;; set config file for eslint
