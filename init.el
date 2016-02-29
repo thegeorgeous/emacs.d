@@ -69,7 +69,8 @@
  '(initial-frame-alist (quote ((fullscreen . fullboth))))
  '(package-selected-packages
    (quote
-    (gotham-theme rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish spaceline smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
+    (web-mode gotham-theme rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish spaceline smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
+ '(send-mail-function (quote mailclient-send-it))
  '(show-smartparens-global-mode t))
 
 (diminish 'helm-mode)
@@ -236,5 +237,9 @@
 
 ;; Enable robe-mode
 (add-hook 'ruby-mode-hook 'robe-mode)
+
+;; Use web mode for erb templates
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (provide 'init)
 ;;; init.el ends here
