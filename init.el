@@ -69,11 +69,11 @@
  '(initial-frame-alist (quote ((fullscreen . fullboth))))
  '(package-selected-packages
    (quote
-    (web-mode gotham-theme rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish spaceline smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
+    (auto-compile spaceline rspec-mode web-mode gotham-theme rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
  '(send-mail-function (quote mailclient-send-it))
  '(show-smartparens-global-mode t))
-
-(diminish 'helm-mode)
+(with-eval-after-load 'helm
+  (diminish 'helm-mode))
 ;; switch mac control and meta buttons
 (setq mac-command-modifier 'control)
 (setq mac-control-modifier 'super)
@@ -96,6 +96,7 @@
 (require 'spaceline-config)
 (spaceline-emacs-theme)
 (setq powerline-default-separator 'wave)
+
 ;; move text up and down
 (defun move-line-up ()
   "Move up the current line."
@@ -162,12 +163,15 @@
   (org-edit-src-save)
   (org-edit-src-exit))
 (global-set-key (kbd "C-c C-e") 'org-edit-src-save-and-exit)
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
 
 ;; helm-mode by default
 (require 'helm)
 (require 'helm-config)
 (helm-mode 1)
 (global-company-mode)
+(diminish 'company-mode)
 
 ;; Helm-bindings for common actions
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -237,9 +241,11 @@
 
 ;; Enable robe-mode
 (add-hook 'ruby-mode-hook 'robe-mode)
+(diminish 'robe-mode)
 
 ;; Use web mode for erb templates
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+
 (provide 'init)
 ;;; init.el ends here
