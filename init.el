@@ -89,13 +89,16 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 160 :family "Inconsolata")))))
 
-;; load spacemacs theme
-(load-theme 'spacemacs-dark t)
+;; load zenburn theme
+(load-theme 'zenburn t)
 
-;; load the spaceline modeline theme
-(require 'spaceline-config)
-(spaceline-emacs-theme)
+;; Use the default powerline
+(require 'powerline)
+(powerline-default-theme)
 (setq powerline-default-separator 'wave)
+;; better colours for colorline separator
+(setq ns-use-srgb-colorspace nil)
+
 
 ;; move text up and down
 (defun move-line-up ()
