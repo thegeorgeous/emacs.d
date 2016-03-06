@@ -241,7 +241,8 @@
 
 ;; Enable robe-mode
 (add-hook 'ruby-mode-hook 'robe-mode)
-(diminish 'robe-mode)
+(with-eval-after-load 'robe-mode
+  (diminish 'robe-mode))
 
 ;; Use web mode for erb templates
 (require 'web-mode)
