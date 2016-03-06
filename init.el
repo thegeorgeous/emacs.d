@@ -122,8 +122,10 @@
 ;; whitespace-mode config
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
-(setq whitespace-style '(face tabs empty trailing lines-tail)) ;; Whitespace mode styles to be used
-(set-face-attribute 'whitespace-line nil :background nil :foreground "#e4d836") ;; If line crossed line length the colour to be shown
+;; Whitespace mode styles to be used
+(setq whitespace-style '(face tabs empty trailing lines-tail))
+;; color to be shown if line crosses the line length limit
+;;(set-face-attribute 'whitespace-line nil :background nil :foreground "#e4d836")
 (global-whitespace-mode t)
 ;; Remove trailing whitespace on save
 (add-hook 'before-save-hook 'whitespace-cleanup t)
