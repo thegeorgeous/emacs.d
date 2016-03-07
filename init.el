@@ -69,7 +69,7 @@
  '(initial-frame-alist (quote ((fullscreen . fullboth))))
  '(package-selected-packages
    (quote
-    (auto-compile spaceline rspec-mode web-mode gotham-theme rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
+    (monokai-theme powerline auto-compile spaceline rspec-mode web-mode gotham-theme rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
  '(send-mail-function (quote mailclient-send-it))
  '(show-smartparens-global-mode t))
 (with-eval-after-load 'helm
@@ -89,8 +89,8 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 160 :family "Inconsolata")))))
 
-;; load zenburn theme
-(load-theme 'zenburn t)
+;; load monokai theme
+(load-theme 'monokai t)
 
 ;; Use the default powerline
 (require 'powerline)
