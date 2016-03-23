@@ -37,6 +37,11 @@
 ;; Ask for confirmation before closing emacs
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+(require 'exec-path-from-shell)
+(setq exec-path-from-shell-check-startup-files nil)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 ;; Always reload the file if it changed on disk
 (global-auto-revert-mode 1)
 (diminish 'auto-revert-mode)
