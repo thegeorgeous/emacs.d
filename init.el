@@ -159,6 +159,9 @@
 (eval-after-load "Emacs-Lisp"
   (define-key emacs-lisp-mode-map (kbd "C-c C-b") 'eval-buffer))
 
+;; Org-mode
+(with-eval-after-load 'org
+  (global-set-key (kbd "C-c a t") #'org-todo-list))
 ;; Org-src-mode
 (declare-function org-edit-src-save "org" nil)
 (declare-function org-edit-src-exit "org" nil)
