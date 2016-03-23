@@ -144,7 +144,7 @@
 (global-set-key (kbd "C-c s") #'crux-transpose-windows)
 (global-set-key (kbd "C-c k") #'crux-kill-other-buffers)
 (global-set-key (kbd "s-j") #'crux-top-join-line)
-(global-set-key (kbd "C-c r") #'crux-rename-file-and-buffer)
+(global-set-key (kbd "C-c R") #'crux-rename-file-and-buffer)
 (global-set-key (kbd "C-c S") #'crux-find-shell-init-file)
 (global-set-key (kbd "s-k") #'crux-kill-whole-line)
 (global-set-key (kbd "C-c n") #'crux-cleanup-buffer-or-region)
@@ -203,6 +203,8 @@
 
 ;; enable projectile-globally
 (projectile-global-mode)
+;; enable projetile-rails-mode
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
 ;; enable flycheck-globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
