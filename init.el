@@ -77,7 +77,7 @@
  '(org-agenda-files (quote ("~/src/btt/ehq/participation/tasks.org")))
  '(package-selected-packages
    (quote
-    (exec-path-from-shell ack erc-colorize projectile-rails monokai-theme powerline auto-compile spaceline rspec-mode web-mode gotham-theme rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
+    (wc-goal-mode wc-mode fill-column-indicator exec-path-from-shell ack erc-colorize projectile-rails monokai-theme powerline auto-compile spaceline rspec-mode web-mode gotham-theme rainbow-mode company-inf-ruby beacon zop-to-char scss-mode diminish smartparens yari robe xclip yaml-mode crux anzu emmet-mode helm-package helm-projectile haml-mode org markdown-mode helm-ag helm-flycheck helm-rails magit json-mode flycheck multiple-cursors zenburn-theme spacemacs-theme projectile js2-mode helm guru-mode company coffee-mode aggressive-indent ace-window)))
  '(send-mail-function (quote mailclient-send-it))
  '(show-smartparens-global-mode t))
 (with-eval-after-load 'helm
