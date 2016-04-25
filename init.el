@@ -267,5 +267,9 @@
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 
+;; For when current line and column display
+;; is out of the screen
+(global-set-key (kbd "C-c l") 'what-line)
+
 (provide 'init)
 ;;; init.el ends here
