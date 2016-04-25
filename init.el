@@ -215,6 +215,7 @@
 (projectile-global-mode)
 ;; enable projetile-rails-mode
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
+(diminish 'projectile-rails-mode)
 ;; enable flycheck-globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
@@ -259,6 +260,8 @@
 ;; Enable robe-mode
 (add-hook 'ruby-mode-hook 'robe-mode)
 (diminish 'robe-mode)
+
+(diminish 'rspec-mode)
 
 ;; Use web mode for erb templates
 (require 'web-mode)
