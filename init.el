@@ -191,32 +191,27 @@
   (interactive)
   (org-edit-src-save)
   (org-edit-src-exit))
-(global-set-key (kbd "C-c C-e") 'org-edit-src-save-and-exit)
+(bind-key "C-c C-e" 'org-edit-src-save-and-exit)
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
 
 ;; helm-mode by default
-;; (require 'helm)
-;; (require 'helm-config)
 (use-package helm
   :diminish helm-mode
   :config
   (helm-mode 1)
-)
+  :bind (("M-x" . helm-M-x)
+         ("C-x C-f" . helm-find-files)
+         ("C-c f" . helm-recentf)
+         ("C-x b" . helm-mini)
+         ("C-x C-b" . helm-buffers-list)))
 
 ;; Use company
 (use-package company
   :diminish company-mode
   :config
   (global-company-mode))
-
-;; Helm-bindings for common actions
-(bind-key "M-x" 'helm-M-x)
-(bind-key "C-x C-f" 'helm-find-files)
-(bind-key "C-c f" 'helm-recentf)
-(bind-key "C-x b" 'helm-mini)
-(bind-key "C-x C-b" 'helm-buffers-list)
 
 ;; magit keys
 (bind-key "C-x g" 'magit-status)
