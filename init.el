@@ -39,6 +39,11 @@
 ;; Ask for confirmation before closing emacs
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
+(require 'bind-key)
+
 (use-package exec-path-from-shell
   :config
   (setq exec-path-from-shell-check-startup-files nil)
