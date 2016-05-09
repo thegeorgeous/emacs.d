@@ -89,7 +89,7 @@
  '(default ((t (:height 160 :family "Inconsolata")))))
 
 ;; load monokai theme
-(load-theme 'monokai t)
+(load-theme 'zenburn t)
 
 ;; Use the default powerline
 (use-package powerline
