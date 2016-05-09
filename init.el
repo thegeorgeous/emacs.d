@@ -181,6 +181,8 @@
 ;; Org-mode
 (with-eval-after-load 'org
   (global-set-key (kbd "C-c a t") #'org-todo-list))
+
+(setq org-agenda-files (quote ("~/.org_files/ehq-participation-tasks.org")))
 ;; Org-src-mode
 (declare-function org-edit-src-save "org" nil)
 (declare-function org-edit-src-exit "org" nil)
