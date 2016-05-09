@@ -184,7 +184,6 @@
   :diminish helm-mode
   :config
   (helm-mode 1)
-  (helm-projectile-on)
   :bind (("M-x" . helm-M-x)
          ("C-x C-f" . helm-find-files)
          ("C-c f" . helm-recentf)
@@ -221,7 +220,8 @@
 ;; enable projectile-globally
 (use-package projectile
   :config
-  (projectile-global-mode))
+  (projectile-global-mode)
+  (helm-projectile-on))
 
 ;; enable projetile-rails-mode
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
