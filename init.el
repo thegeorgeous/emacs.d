@@ -208,7 +208,9 @@
   ("C-c j" . avy-goto-word-or-subword-1)
   ("s-." . avy-goto-word-or-subword-1))
 
-(bind-key "s-w" 'ace-window)
+(use-package ace-window
+  :bind
+  ("s-w" . ace-window))
 
 ;; enable guru-global-mode
 (use-package guru-mode
