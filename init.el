@@ -39,6 +39,9 @@
 ;; Ask for confirmation before closing emacs
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
 (eval-when-compile
   (require 'use-package))
 (require 'diminish)
@@ -116,8 +119,8 @@
   (forward-line -1)
   (indent-according-to-mode))
 
-(global-set-key [(control shift up)]  'move-line-up)
-(global-set-key [(control shift down)]  'move-line-down)
+(bind-key [(control shift up)]  'move-line-up)
+(bind-key [(control shift down)]  'move-line-down)
 
 ;; whitespace-mode config
 (use-package whitespace
@@ -137,26 +140,26 @@
 ;; enable crux
 (use-package crux
   :bind (("C-c I" . crux-find-user-init-file)
-	 ("C-c D" . crux-delete-file-and-buffer)
-	 ("C-c s" . crux-transpose-windows)
-	 ("C-c k" . crux-kill-other-buffers)
-	 ("s-j" . crux-top-join-line)
-	 ("C-c R" . crux-rename-file-and-buffer)
-	 ("C-c S" . crux-find-shell-init-file)
-	 ("s-k" . crux-kill-whole-line)
-	 ("C-c n" . crux-cleanup-buffer-or-region)
-	 ("C-c TAB" . crux-indent-rigidly-and-copy-to-clipboard)
-	 ("C-a" . crux-move-beginning-of-line)))
+         ("C-c D" . crux-delete-file-and-buffer)
+         ("C-c s" . crux-transpose-windows)
+         ("C-c k" . crux-kill-other-buffers)
+         ("s-j" . crux-top-join-line)
+         ("C-c R" . crux-rename-file-and-buffer)
+         ("C-c S" . crux-find-shell-init-file)
+         ("s-k" . crux-kill-whole-line)
+         ("C-c n" . crux-cleanup-buffer-or-region)
+         ("C-c TAB" . crux-indent-rigidly-and-copy-to-clipboard)
+         ("C-a" . crux-move-beginning-of-line)))
 
 ;; Package List shortcut
 (bind-keys :prefix-map package-map
-	  :prefix "C-x p"
-	  ("p" . package-list-packages)
-	  ("P" . paradox-list-packages))
+          :prefix "C-x p"
+          ("p" . package-list-packages)
+          ("P" . paradox-list-packages))
 
 ;; Emacs-Lisp mode keys
 (bind-keys :map emacs-lisp-mode-map
-	   ("C-c C-b" . eval-buffer))
+           ("C-c C-b" . eval-buffer))
 
 ;; Org-mode
 (with-eval-after-load 'org
@@ -181,6 +184,7 @@
   :diminish helm-mode
   :config
   (helm-mode 1)
+  (helm-projectile-on)
   :bind (("M-x" . helm-M-x)
          ("C-x C-f" . helm-find-files)
          ("C-c f" . helm-recentf)
@@ -194,12 +198,17 @@
   (global-company-mode))
 
 ;; magit keys
-(bind-key "C-x g" 'magit-status)
-(bind-key "C-c b" 'magit-blame)
+(use-package magit
+  :bind
+  ("C-x g" . magit-status)
+  ("C-c b" . magit-blame))
 
 ;; avy and ace-window
-(bind-key "C-c j" 'avy-goto-word-or-subword-1)
-(bind-key "s-." 'avy-goto-word-or-subword-1)
+(use-package avy
+  :bind
+  ("C-c j" . avy-goto-word-or-subword-1)
+  ("s-." . avy-goto-word-or-subword-1))
+
 (bind-key "s-w" 'ace-window)
 
 ;; enable guru-global-mode
@@ -210,11 +219,14 @@
   (setq guru-warn-only t))
 
 ;; enable projectile-globally
-(projectile-global-mode)
+(use-package projectile
+  :config
+  (projectile-global-mode))
+
 ;; enable projetile-rails-mode
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
-(with-eval-after-load 'projectile-rails
-  (diminish 'projectile-rails-mode))
+(use-package projectile-rails
+  :diminish projectile-rails-mode)
 
 ;; anzu mode globally
 (use-package anzu
@@ -222,7 +234,7 @@
   :config
   (global-anzu-mode)
   :bind (("M-%" . anzu-query-replace)
-	 ("C-M-%" . anzu-query-replace-regexp)))
+         ("C-M-%" . anzu-query-replace-regexp)))
 
 ;; Start eshell or switch to it if it's active.
 (bind-key "C-x m" 'eshell)
@@ -238,21 +250,20 @@
   (setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop")
   (setq flycheck-eslintrc "~/.eslintrc"))
 
-;; enable helm bindings for projectile
-(helm-projectile-on)
-
 ;; global-smartparens
 (require 'smartparens-config)
 (require 'smartparens-ruby)
-(smartparens-global-mode)
-(show-smartparens-global-mode t)
-(diminish 'smartparens-mode)
+(use-package smartparens
+  :diminish smartparens-mode
+  :config
+  (smartparens-global-mode)
+  (show-smartparens-global-mode t))
 
 ;; Enable multiple-cursors-mode
 (use-package multiple-cursors
   :bind (("C-<" . mc/mark-previous-like-this)
-	 ("C->" . mc/mark-next-like-this)
-	 ("C-c C-<" . mc/mark-all-like-this)))
+         ("C->" . mc/mark-next-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)))
 
 ;; Highlight the current line
 (global-hl-line-mode +1)
@@ -277,8 +288,6 @@
 ;; is out of the screen
 (bind-key "C-c l" 'what-line)
 
-(provide 'init)
-;;; init.el ends here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -287,3 +296,6 @@
  '(package-selected-packages
    (quote
     (zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode projectile-rails powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu aggressive-indent ack ace-window))))
+
+(provide 'init)
+;;; init.el ends here
