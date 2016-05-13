@@ -94,6 +94,8 @@
 ;; load monokai theme
 (load-theme 'zenburn t)
 
+(bind-key "C-c e" 'save-buffers-kill-emacs)
+
 ;; Use the default powerline
 (use-package powerline
   :config
@@ -295,9 +297,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
  '(package-selected-packages
    (quote
-    (zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode projectile-rails powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu aggressive-indent ack ace-window))))
+    (zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu aggressive-indent ack ace-window))))
 
 (provide 'init)
 ;;; init.el ends here
