@@ -48,6 +48,7 @@
 (require 'bind-key)
 
 (use-package exec-path-from-shell
+  :ensure t
   :config
   (setq exec-path-from-shell-check-startup-files nil)
   (when (memq window-system '(mac ns))
@@ -91,8 +92,11 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 160 :family "Inconsolata")))))
 
-;; load monokai theme
-(load-theme 'zenburn t)
+;; load zenburn theme
+(use-package zenburn-theme
+  :ensure t
+  :config
+  (load-theme 'zenburn t))
 
 (bind-key "C-c e" 'save-buffers-kill-emacs)
 
@@ -141,6 +145,7 @@
 
 ;; enable crux
 (use-package crux
+  :ensure t
   :bind (("C-c I" . crux-find-user-init-file)
          ("C-c D" . crux-delete-file-and-buffer)
          ("C-c s" . crux-transpose-windows)
@@ -200,17 +205,20 @@
 
 ;; magit keys
 (use-package magit
+  :ensure t
   :bind
   ("C-x g" . magit-status)
   ("C-c b" . magit-blame))
 
 ;; avy and ace-window
 (use-package avy
+  :ensure t
   :bind
   ("C-c j" . avy-goto-word-or-subword-1)
   ("s-." . avy-goto-word-or-subword-1))
 
 (use-package ace-window
+  :ensure t
   :bind
   ("s-w" . ace-window))
 
@@ -227,13 +235,14 @@
   (projectile-global-mode)
   (helm-projectile-on))
 
-;; enable projetile-rails-mode
+;; enable projectile-rails-mode
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 (use-package projectile-rails
   :diminish projectile-rails-mode)
 
 ;; anzu mode globally
 (use-package anzu
+  :ensure t
   :diminish anzu-mode
   :config
   (global-anzu-mode)
@@ -301,7 +310,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(package-selected-packages
    (quote
-    (zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu aggressive-indent ack ace-window))))
+    (projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu aggressive-indent ack ace-window))))
 
 (provide 'init)
 ;;; init.el ends here
