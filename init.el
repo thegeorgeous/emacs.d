@@ -255,8 +255,12 @@
 ;; Start a regular shell
 (bind-key "C-x M-m" 'shell)
 
+;; Start an ansi-term
+(bind-key "C-c t" 'ansi-term)
+
 ;; set flycheck configurations
 (use-package flycheck
+  :ensure t
   :init
   (add-hook 'after-init-hook #'global-flycheck-mode)
   :config
@@ -274,6 +278,7 @@
 
 ;; Enable multiple-cursors-mode
 (use-package multiple-cursors
+  :ensure t
   :bind (("C-<" . mc/mark-previous-like-this)
          ("C->" . mc/mark-next-like-this)
          ("C-c C-<" . mc/mark-all-like-this)))
