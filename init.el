@@ -103,6 +103,7 @@
 
 ;; Use the default powerline
 (use-package powerline
+  :ensure t
   :config
   (powerline-default-theme)
   (setq powerline-default-separator 'wave))
@@ -245,6 +246,7 @@
 
 ;; enable projectile-rails-mode
 (use-package projectile-rails
+  :ensure t
   :diminish projectile-rails-mode
   :config
   (add-hook 'projectile-mode-hook 'projectile-rails-on))
@@ -302,19 +304,38 @@
   (add-hook 'ruby-mode-hook 'robe-mode))
 
 (use-package robe
+  :ensure t
   :diminish robe-mode)
 
 (use-package rspec-mode
+  :ensure t
   :diminish rspec-mode)
 
 ;; Use web mode for erb templates
 (use-package web-mode
+  :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)))
 
 ;; For when current line and column display
 ;; is out of the screen
 (bind-key "C-c l" 'what-line)
+
+;; Add markdown-mode
+(use-package markdown-mode
+  :ensure t)
+
+(use-package yaml-mode
+  :ensure t)
+
+(use-package zop-to-char
+  :ensure t)
+
+(use-package scss-mode
+  :ensure t)
+
+(use-package beacon
+  :ensure t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
