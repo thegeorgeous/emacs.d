@@ -189,6 +189,7 @@
 
 ;; helm-mode by default
 (use-package helm
+  :ensure t
   :diminish helm-mode
   :config
   (helm-mode 1)
@@ -232,6 +233,7 @@
 
 ;; enable projectile-globally
 (use-package projectile
+  :ensure t
   :config
   (projectile-global-mode)
   (helm-projectile-on))
