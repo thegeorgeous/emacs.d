@@ -40,6 +40,7 @@
 (setq confirm-kill-emacs 'yes-or-no-p)
 
 (unless (package-installed-p 'use-package)
+  (package-refresh-contents)
   (package-install 'use-package))
 
 (eval-when-compile
