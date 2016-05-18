@@ -28,7 +28,7 @@
 
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
-;; Enable copy/past-ing from clipboard
+;; Enable copy/pasting from clipboard
 (setq select-enable-clipboard t)
 ;; Replace selected text with what is typed
 (delete-selection-mode 1)
@@ -226,6 +226,7 @@
 
 ;; enable guru-global-mode
 (use-package guru-mode
+  :ensure t
   :diminish guru-mode
   :config
   (guru-global-mode +1)
@@ -235,13 +236,18 @@
 (use-package projectile
   :ensure t
   :config
-  (projectile-global-mode)
+  (projectile-global-mode))
+
+(use-package helm-projectile
+  :ensure t
+  :config
   (helm-projectile-on))
 
 ;; enable projectile-rails-mode
-(add-hook 'projectile-mode-hook 'projectile-rails-on)
 (use-package projectile-rails
-  :diminish projectile-rails-mode)
+  :diminish projectile-rails-mode
+  :config
+  (add-hook 'projectile-mode-hook 'projectile-rails-on))
 
 ;; anzu mode globally
 (use-package anzu
@@ -271,13 +277,14 @@
   (setq flycheck-eslintrc "~/.eslintrc"))
 
 ;; global-smartparens
-(require 'smartparens-config)
-(require 'smartparens-ruby)
 (use-package smartparens
+  :ensure t
   :diminish smartparens-mode
   :config
   (smartparens-global-mode)
   (show-smartparens-global-mode t))
+(require 'smartparens-config)
+(require 'smartparens-ruby)
 
 ;; Enable multiple-cursors-mode
 (use-package multiple-cursors
