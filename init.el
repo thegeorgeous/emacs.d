@@ -85,6 +85,9 @@
 ;; make cursor a line
 (setq-default cursor-type 'bar)
 
+;; set fill-column to 80
+(setq-default fill-column 80)
+
 ;; set font family and size
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -135,7 +138,7 @@
   :diminish global-whitespace-mode
   :config
   (setq whitespace-line-column 80)
-  (setq whitespace-style '(face tabs empty trailing lines-tail))
+  (setq whitespace-style '(tabs empty trailing))
   (global-whitespace-mode t)
   (add-hook 'before-save-hook 'whitespace-cleanup t))
 
@@ -337,6 +340,11 @@
 (use-package beacon
   :ensure t)
 
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'fci-mode))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -346,7 +354,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(package-selected-packages
    (quote
-    (projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu aggressive-indent ack ace-window))))
+    (projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu ack ace-window))))
 
 (provide 'init)
 ;;; init.el ends here
