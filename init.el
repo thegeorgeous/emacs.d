@@ -350,6 +350,18 @@
   :config
   (add-hook 'prog-mode-hook 'fci-mode))
 
+(use-package emmet-mode
+  :ensure t)
+
+(use-package helm-ag
+  :ensure t)
+
+(use-package haml-mode
+  :ensure t)
+
+(use-package ack
+  :ensure t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -359,7 +371,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(package-selected-packages
    (quote
-    (projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu ack ace-window))))
+    (fill-column-indicator projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu ack ace-window))))
 
 (provide 'init)
 ;;; init.el ends here
