@@ -244,8 +244,17 @@
 
 (use-package helm-projectile
   :ensure t
-  :config
-  (helm-projectile-on))
+  :init
+  (setq projectile-switch-project-action #'helm-projectile-find-file)
+  (helm-projectile-on)
+  :bind(:map projectile-mode-map
+	     ("C-c p p" . helm-projectile-switch-project)
+	     ("C-c p f" . helm-projectile-find-file)
+	     ("C-c p s g" . helm-projectile-grep)
+	     ("C-c p s s" . helm-projectile-ag)
+	     ("C-c p e" . helm-projectile-recentf)
+	     ("C-c p b" . helm-projectile-switch-to-buffer)
+	     ("C-c p F" . helm-projectile-find-file-in-known-projects)))
 
 ;; enable projectile-rails-mode
 (use-package projectile-rails
