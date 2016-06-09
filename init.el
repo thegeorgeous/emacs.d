@@ -205,6 +205,7 @@
 
 ;; Use company
 (use-package company
+  :ensure t
   :diminish company-mode
   :config
   (global-company-mode))
@@ -380,7 +381,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(package-selected-packages
    (quote
-    (fill-column-indicator projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu ack ace-window))))
+    (company fill-column-indicator projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu ack ace-window))))
 
 (provide 'init)
 ;;; init.el ends here
