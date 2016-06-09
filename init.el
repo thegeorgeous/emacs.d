@@ -295,11 +295,12 @@
 (use-package smartparens
   :ensure t
   :diminish smartparens-mode
+  :init
+  (require 'smartparens-config)
+  (require 'smartparens-ruby)
   :config
   (smartparens-global-mode)
   (show-smartparens-global-mode t))
-(require 'smartparens-config)
-(require 'smartparens-ruby)
 
 ;; Enable multiple-cursors-mode
 (use-package multiple-cursors
