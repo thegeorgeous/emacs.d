@@ -76,7 +76,6 @@
 ;; start emacs in fullscreen
 (toggle-frame-fullscreen)
 
-
 ;; switch mac control and meta buttons
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'control)
@@ -214,8 +213,11 @@
 (use-package magit
   :ensure t
   :bind
-  ("C-x g" . magit-status)
-  ("C-c b" . magit-blame))
+  ("C-x g" . magit-status))
+
+(bind-keys :prefix-map prog-mode-map
+	   :prefix "s-m"
+	   ("b" . magit-blame))
 
 ;; avy and ace-window
 (use-package avy
@@ -382,7 +384,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(package-selected-packages
    (quote
-    (company fill-column-indicator projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu ack ace-window))))
+    (fill-column-indicator projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu ack ace-window))))
 
 (provide 'init)
 ;;; init.el ends here
