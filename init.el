@@ -213,11 +213,8 @@
 (use-package magit
   :ensure t
   :bind
-  ("C-x g" . magit-status))
-
-(bind-keys :prefix-map prog-mode-map
-	   :prefix "s-m"
-	   ("b" . magit-blame))
+  ("C-x g" . magit-status)
+  ("C-c b" . magit-blame))
 
 ;; avy and ace-window
 (use-package avy
