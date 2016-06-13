@@ -284,11 +284,11 @@
 ;; set flycheck configurations
 (use-package flycheck
   :ensure t
-  :init
-  (add-hook 'after-init-hook #'global-flycheck-mode)
+  :init (global-flycheck-mode)
   :config
   (setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop")
-  (setq flycheck-eslintrc "~/.eslintrc"))
+  (setq flycheck-eslintrc "~/.eslintrc")
+  (setq flycheck-haml-executable "~/.rbenv/shims/haml"))
 
 ;; global-smartparens
 (use-package smartparens
