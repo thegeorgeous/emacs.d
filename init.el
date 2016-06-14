@@ -76,6 +76,12 @@
 ;; start emacs in fullscreen
 (toggle-frame-fullscreen)
 
+;; set scratch buffer initial mode
+(setq initial-major-mode 'org-mode)
+(setq initial-scratch-message "\
+# This buffer is for todo-lists that are not saved, and for Org mode.
+# To create a file, visit that file with <open>, and enter text in its buffer.")
+
 ;; switch mac control and meta buttons
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'control)
