@@ -104,8 +104,9 @@
 ;; load zenburn theme
 (use-package zenburn-theme
   :ensure t
-  :config
-  (load-theme 'zenburn t))
+  :init
+  (load-theme 'zenburn t)
+ )
 
 (bind-key "C-c e" 'save-buffers-kill-emacs)
 
@@ -381,6 +382,14 @@
 (use-package rainbow-mode
   :ensure t)
 
+(use-package coffee-mode
+  :ensure t)
+
+(use-package js2-mode
+  :ensure t
+  :config
+  (setq js-indent-level 2))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -388,9 +397,12 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
+ '(custom-safe-themes
+   (quote
+    ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (fill-column-indicator projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby coffee-mode beacon auto-compile anzu ack ace-window))))
+    (spacemacs-theme django-mode anaconda-mode csv-mode fill-column-indicator projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby beacon auto-compile anzu ack ace-window))))
 
 (provide 'init)
 ;;; init.el ends here
