@@ -395,14 +395,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
- '(custom-safe-themes
-   (quote
-    ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (spacemacs-theme django-mode anaconda-mode csv-mode fill-column-indicator projectile-rails zop-to-char zenburn-theme yari yaml-mode xclip web-mode wc-mode wc-goal-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode powerline paradox ov multiple-cursors monokai-theme markdown-mode magit haml-mode guru-mode flycheck exec-path-from-shell erc-colorize emmet-mode crux company-inf-ruby beacon auto-compile anzu ack ace-window))))
+    (zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode projectile-rails powerline multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell emmet-mode crux company coffee-mode beacon anzu ack ace-window))))
 
 (provide 'init)
 ;;; init.el ends here
