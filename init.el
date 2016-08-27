@@ -101,6 +101,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 180 :family "Inconsolata")))))
 
+
 ;; load zenburn theme
 (use-package zenburn-theme
   :ensure t
@@ -390,6 +391,14 @@
   :config
   (setq js-indent-level 2))
 
+(use-package anaconda-mode
+  :ensure t)
+
+(use-package company-anaconda
+  :ensure t)
+
+(provide 'init)
+;;; init.el ends here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -397,7 +406,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode projectile-rails powerline multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell emmet-mode crux company coffee-mode beacon anzu ack ace-window))))
-
-(provide 'init)
-;;; init.el ends here
+    (company-anaconda anaconda-mode atom-one-dark-theme csv-mode monokai-theme diff-hl zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode projectile-rails powerline multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell emmet-mode crux company coffee-mode beacon anzu ack ace-window))))
