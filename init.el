@@ -184,7 +184,6 @@
 (with-eval-after-load 'org
   (global-set-key (kbd "C-c a t") #'org-todo-list))
 
-(setq org-agenda-files (quote ("~/.org_files/ehq-participation-tasks.org")))
 ;; Org-src-mode
 (declare-function org-edit-src-save "org" nil)
 (declare-function org-edit-src-exit "org" nil)
@@ -297,7 +296,7 @@
   :ensure t
   :init (global-flycheck-mode)
   :config
-  (setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop")
+  (setq flycheck-ruby-rubocop-executable "/usr/local/bin/rubocop")
   (setq flycheck-eslintrc "~/.eslintrc")
   (setq flycheck-haml-executable "~/.rbenv/shims/haml"))
 
