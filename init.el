@@ -119,10 +119,7 @@
   :ensure t
   :config
   (powerline-default-theme)
-  (setq powerline-default-separator 'wave))
-
-;; better colours for colorline separator
-(setq ns-use-srgb-colorspace nil)
+  (setq powerline-default-separator 'alternate))
 
 ;; move text up and down
 (defun move-line-up ()
