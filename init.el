@@ -299,7 +299,7 @@
   :ensure t
   :init (global-flycheck-mode)
   :config
-  (setq flycheck-ruby-rubocop-executable "/usr/local/bin/rubocop")
+  (setq flycheck-ruby-rubocop-executable "/Users/thegeorgeous/.rbenv/shims/rubocop")
   (setq flycheck-eslintrc "~/.eslintrc")
   (setq flycheck-haml-executable "~/.rbenv/shims/haml"))
 
