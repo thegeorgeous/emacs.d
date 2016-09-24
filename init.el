@@ -240,8 +240,7 @@
   :ensure t
   :diminish guru-mode
   :config
-  (guru-global-mode +1)
-  (setq guru-warn-only t))
+  (guru-global-mode +1))
 
 ;; enable projectile-globally
 (use-package projectile
