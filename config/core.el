@@ -84,6 +84,14 @@
 ;; set fill-column to 80
 (setq-default fill-column 80)
 
+;; Use the default powerline
+(use-package powerline
+  :ensure t
+  :config
+  (powerline-default-theme)
+  (setq powerline-default-separator 'alternate))
+
+
 (provide 'prelude)
 
 ;;; core.el ends here
