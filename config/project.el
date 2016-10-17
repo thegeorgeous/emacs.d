@@ -34,7 +34,7 @@
 (use-package projectile
   :ensure t
   :config
-  (projectile-global-mode))
+  (projectile-mode))
 
 (use-package helm-ag
   :ensure t)

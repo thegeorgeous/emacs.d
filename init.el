@@ -41,10 +41,7 @@
 ;; (load-theme 'railscasts-reloaded t)
 
 ;; Package List shortcut
-(bind-keys :prefix-map package-map
-          :prefix "C-x p"
-          ("p" . package-list-packages)
-          ("P" . paradox-list-packages))
+(bind-key "C-x p" 'package-list-packages)
 
 ;; Emacs-Lisp mode keys
 (bind-keys :map emacs-lisp-mode-map
@@ -72,7 +69,6 @@
   :init (global-flycheck-mode)
   :config
   (setq flycheck-ruby-rubocop-executable "/Users/thegeorgeous/.rbenv/shims/rubocop")
-  (setq flycheck-eslintrc "~/.eslintrc")
   (setq flycheck-haml-executable "~/.rbenv/shims/haml"))
 
 ;; Use web mode for erb templates
@@ -124,4 +120,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-package enh-ruby-mode go-mode dockerfile-mode zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode projectile-rails powerline multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell emmet-mode crux company-anaconda coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
+    (org-pomodoro flycheck-package enh-ruby-mode go-mode dockerfile-mode zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode projectile-rails powerline multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell emmet-mode crux company-anaconda coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))

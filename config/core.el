@@ -92,6 +92,6 @@
   (setq powerline-default-separator 'alternate))
 
 
-(provide 'prelude)
+(provide 'core)
 
 ;;; core.el ends here
