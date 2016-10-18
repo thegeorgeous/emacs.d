@@ -5,18 +5,10 @@
 ;;; Code:
 
 (use-package enh-ruby-mode
-  :ensure t
-  :config
-  (add-hook 'enh-ruby-mode-hook 'robe-mode))
+  :ensure t)
 
 (add-to-list 'auto-mode-alist
              '("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
-
-
-;; Enable robe-mode
-(use-package robe
-  :ensure t
-  :diminish robe-mode)
 
 (use-package rspec-mode
   :ensure t

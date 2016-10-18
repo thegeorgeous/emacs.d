@@ -120,4 +120,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (org-pomodoro flycheck-package enh-ruby-mode go-mode dockerfile-mode zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode robe rainbow-mode projectile-rails powerline multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell emmet-mode crux company-anaconda coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
+    (org-pomodoro flycheck-package enh-ruby-mode go-mode dockerfile-mode zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode rainbow-mode projectile-rails powerline multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell emmet-mode crux company-anaconda coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
