@@ -111,6 +111,9 @@
 
 (setenv "GOPATH" "/Users/thegeorgeous/project/golang")
 
+;; Kill buffers for channels after /part
+(setq erc-kill-buffer-on-part t)
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
