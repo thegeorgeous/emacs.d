@@ -28,7 +28,10 @@
   :ensure t
   :bind
   ("C-x g" . magit-status)
-  ("C-c b" . magit-blame))
+  ("C-c b" . magit-blame)
+  :config
+  (setq git-commit-summary-max-length 50)
+  (git-commit-flyspell-verify))
 
 ;; enable projectile-globally
 (use-package projectile
