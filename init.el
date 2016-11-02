@@ -30,11 +30,11 @@
  '(default ((t (:height 160 :family "Inconsolata")))))
 
 
-;; load zenburn theme
-(use-package zenburn-theme
+;; load railscasts-reloaded theme
+(use-package railscasts-reloaded-theme
   :ensure t
   :init
-  (load-theme 'zenburn t)
+  (load-theme 'railscasts-reloaded t)
  )
 
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/railscasts-reloaded-theme/")

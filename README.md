@@ -18,7 +18,7 @@ git clone https://github.com/thegeorgeous/emacs.d ~/.emacs.d
 ## Features
 
 * Uses [use-package](https://github.com/jwiegley/use-package) to handle packages and package configuration
-* Uses [Zenburn](https://github.com/bbatsov/zenburn-emacs) as the default theme
+* Uses [Railscasts Reloaded](https://github.com/thegeorgeous/railscasts-reloaded-theme) as the default theme
 * [Projectile](https://github.com/bbatsov/projectile) for project management
 * [Helm](https://github.com/emacs-helm/helm) for navigation
 * [Magit](https://www.magit.vc/) for Version Control
