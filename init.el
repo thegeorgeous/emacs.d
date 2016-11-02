@@ -112,6 +112,7 @@
 (setenv "GOPATH" "/Users/thegeorgeous/project/golang")
 
 ;; Kill buffers for channels after /part
+(require 'erc)
 (setq erc-kill-buffer-on-part t)
 
 (provide 'init)
@@ -123,4 +124,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dash-at-point org-pomodoro flycheck-package enh-ruby-mode go-mode dockerfile-mode zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode rainbow-mode projectile-rails powerline multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell emmet-mode crux company-anaconda coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
+    (zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode rainbow-mode projectile-rails powerline org-pomodoro multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode go-mode flycheck-package fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dockerfile-mode dash-at-point crux company-anaconda coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
