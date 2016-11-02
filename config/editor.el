@@ -7,6 +7,9 @@
 (use-package beacon
   :ensure t)
 
+;; set size of files to open without warning
+(setq large-file-warning-threshold 100000000)
+
 ;; whitespace-mode config
 (use-package whitespace
   :diminish global-whitespace-mode
