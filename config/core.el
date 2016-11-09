@@ -13,9 +13,13 @@
 (scroll-bar-mode -1) ;; No ugly scrollbar
 (setq ring-bell-function 'ignore)
 
-;; Newline at end of file
+;; show column number and size of file
 (column-number-mode t)
 (size-indication-mode t)
+
+;; disable tabs
+(setq-default indent-tabs-mode nil)
+
 
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
