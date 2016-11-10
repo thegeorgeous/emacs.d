@@ -105,6 +105,14 @@
   :config
   (add-to-list 'dash-at-point-mode-alist '(enh-ruby-mode . "ruby,rubygems,rails")))
 
+;; set flycheck configurations
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode)
+  :config
+  (setq flycheck-ruby-rubocop-executable "/Users/thegeorgeous/.rbenv/shims/rubocop")
+  (setq flycheck-haml-executable "~/.rbenv/shims/haml"))
+
 (provide 'editor)
 
 
