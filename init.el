@@ -27,18 +27,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 160 :family "Inconsolata")))))
+ '(default ((t (:height 140 :family "Fira Code")))))
 
-
-;; load railscasts-reloaded theme
-(use-package railscasts-reloaded-theme
-  :ensure t
-  :init
-  (load-theme 'railscasts-reloaded t)
- )
-
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/railscasts-reloaded-theme/")
-;; (load-theme 'railscasts-reloaded t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/railscasts-reloaded-theme/")
+(load-theme 'railscasts-reloaded t)
 
 ;; Package List shortcut
 (bind-key "C-x p" 'package-list-packages)
@@ -124,4 +116,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode rainbow-mode projectile-rails powerline org-pomodoro multiple-cursors monokai-theme markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode go-mode flycheck-package fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dockerfile-mode dash-at-point crux company-anaconda coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
+    (zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode rainbow-mode projectile-rails powerline org-pomodoro multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck-package fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dockerfile-mode dash-at-point crux company-anaconda coffee-mode beacon anzu ack ace-window))))
