@@ -19,6 +19,7 @@
 (load "editor")    ;; Code editor configurations for Emacs
 (load "project")   ;; Project management configurations
 (load "rails")     ;; Rails related configurations
+(load "frontend")  ;; Configuration for frontend languages
 (load "terminal")  ;; Terminal tool shortcuts
 
 ;; set font family and size
@@ -55,30 +56,7 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
-;; set flycheck configurations
-(use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode)
-  :config
-  (setq flycheck-ruby-rubocop-executable "/Users/thegeorgeous/.rbenv/shims/rubocop")
-  (setq flycheck-haml-executable "~/.rbenv/shims/haml"))
-
-;; Use web mode for erb templates
-(use-package web-mode
-  :ensure t
-  :config
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)))
-
 (use-package zop-to-char
-  :ensure t)
-
-(use-package scss-mode
-  :ensure t)
-
-(use-package emmet-mode
-  :ensure t)
-
-(use-package haml-mode
   :ensure t)
 
 (use-package ack
@@ -87,21 +65,11 @@
 (use-package rainbow-mode
   :ensure t)
 
-(use-package coffee-mode
-  :ensure t)
-
-(use-package js2-mode
-  :ensure t
-  :config
-  (setq js-indent-level 2))
-
 (use-package anaconda-mode
   :ensure t)
 
 (use-package company-anaconda
   :ensure t)
-
-(setenv "GOPATH" "/Users/thegeorgeous/project/golang")
 
 ;; Kill buffers for channels after /part
 (require 'erc)
