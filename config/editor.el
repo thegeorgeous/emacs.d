@@ -19,6 +19,9 @@
   (global-whitespace-mode t)
   (add-hook 'before-save-hook 'whitespace-cleanup t))
 
+;; add blank line at end of file
+(setq require-final-newline t)
+
 ;; CamelCase aware editing
 (add-hook 'prog-mode-hook 'subword-mode)
 (with-eval-after-load 'subword
