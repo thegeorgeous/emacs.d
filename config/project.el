@@ -16,12 +16,27 @@
          ("C-x b" . helm-mini)
          ("C-x C-b" . helm-buffers-list)))
 
-;; Use company
-(use-package company
+;; Use auto-complete
+(use-package auto-complete
   :ensure t
-  :diminish company-mode
   :config
-  (global-company-mode))
+  (ac-config-default)
+  (setq ac-ignore-case nil)
+  (add-to-list 'ac-modes 'enh-ruby-mode))
+
+;; purcell's workaround for broken auto-complete popup
+;; when fci-mode is on
+(defvar sanityinc/fci-mode-suppressed nil)
+(defadvice popup-create (before suppress-fci-mode activate)
+  "Suspend fci-mode while popups are visible."
+  (set (make-local-variable 'sanityinc/fci-mode-suppressed) fci-mode)
+  (when fci-mode
+    (turn-off-fci-mode)))
+(defadvice popup-delete (after restore-fci-mode activate)
+  "Restore fci-mode when all popups have closed."
+  (when (and (not popup-instances) sanityinc/fci-mode-suppressed)
+    (setq sanityinc/fci-mode-suppressed nil)
+    (turn-on-fci-mode)))
 
 ;; magit keys
 (use-package magit
@@ -30,8 +45,7 @@
   ("C-x g" . magit-status)
   ("C-c b" . magit-blame)
   :config
-  (setq git-commit-summary-max-length 50)
-  (git-commit-flyspell-verify))
+  (setq git-commit-summary-max-length 50))
 
 ;; enable projectile-globally
 (use-package projectile

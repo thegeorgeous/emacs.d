@@ -21,6 +21,7 @@
 (load "rails")     ;; Rails related configurations
 (load "frontend")  ;; Configuration for frontend languages
 (load "terminal")  ;; Terminal tool shortcuts
+;;(load "fira-liga") ;; Ligatures for Fira Code
 
 ;; set font family and size
 (custom-set-faces
@@ -29,7 +30,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 140 :family "Fira Code")))))
-
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/railscasts-reloaded-theme/")
 (load-theme 'railscasts-reloaded t)
 
@@ -65,12 +65,6 @@
 (use-package rainbow-mode
   :ensure t)
 
-(use-package anaconda-mode
-  :ensure t)
-
-(use-package company-anaconda
-  :ensure t)
-
 ;; Kill buffers for channels after /part
 (require 'erc)
 (setq erc-kill-buffer-on-part t)
@@ -84,4 +78,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode rainbow-mode projectile-rails powerline org-pomodoro multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck-package fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dockerfile-mode dash-at-point crux company-anaconda coffee-mode beacon anzu ack ace-window))))
+    (auto-complete zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode rainbow-mode projectile-rails powerline org-pomodoro multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck-package fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dockerfile-mode dash-at-point crux coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
