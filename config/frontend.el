@@ -5,7 +5,9 @@
 ;;; Code:
 
 (use-package scss-mode
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'scss-mode-hook 'rainbow-mode))
 
 (use-package emmet-mode
   :ensure t)
