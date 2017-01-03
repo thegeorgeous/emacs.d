@@ -52,6 +52,15 @@
   :bind (("M-%" . anzu-query-replace)
          ("C-M-%" . anzu-query-replace-regexp)))
 
+;; Use auto-complete
+(use-package auto-complete
+  :ensure t
+  :diminish auto-complete-mode
+  :config
+  (ac-config-default)
+  (setq ac-ignore-case nil)
+  (add-to-list 'ac-modes 'enh-ruby-mode))
+
 ;; global-smartparens
 (use-package smartparens
   :ensure t

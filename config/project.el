@@ -16,14 +16,6 @@
          ("C-x b" . helm-mini)
          ("C-x C-b" . helm-buffers-list)))
 
-;; Use auto-complete
-(use-package auto-complete
-  :ensure t
-  :config
-  (ac-config-default)
-  (setq ac-ignore-case nil)
-  (add-to-list 'ac-modes 'enh-ruby-mode))
-
 ;; purcell's workaround for broken auto-complete popup
 ;; when fci-mode is on
 (defvar sanityinc/fci-mode-suppressed nil)
