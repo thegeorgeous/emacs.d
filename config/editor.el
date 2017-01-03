@@ -116,9 +116,13 @@
   (setq flycheck-ruby-rubocop-executable "/Users/thegeorgeous/.rbenv/shims/rubocop")
   (setq flycheck-haml-executable "~/.rbenv/shims/haml"))
 
+(use-package yasnippet
+  :ensure t
+  :diminish yas-minor-mode
+  :config
+  (yas-global-mode))
+
 (setq vc-follow-symlinks t)
 
 (provide 'editor)
-
-
 ;;; editor.el ends here

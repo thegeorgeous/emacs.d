@@ -79,4 +79,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auto-complete zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens scss-mode rspec-mode rainbow-mode projectile-rails powerline org-pomodoro multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck-package fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dockerfile-mode dash-at-point crux coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
+    (yasnippet auto-complete zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens rspec-mode rainbow-mode projectile-rails powerline org-pomodoro multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck-package fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dockerfile-mode dash-at-point crux coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
