@@ -116,6 +116,8 @@
   (setq flycheck-ruby-rubocop-executable "/Users/thegeorgeous/.rbenv/shims/rubocop")
   (setq flycheck-haml-executable "~/.rbenv/shims/haml"))
 
+(setq vc-follow-symlinks t)
+
 (provide 'editor)
 
 
