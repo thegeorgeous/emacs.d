@@ -45,6 +45,11 @@
   :config
   (projectile-mode))
 
+(setq projectile-mode-line
+  '(:eval (if (file-remote-p default-directory)
+              " Projectile"
+            (format "[%s]" (projectile-project-name)))))
+
 (use-package helm-ag
   :ensure t)
 
