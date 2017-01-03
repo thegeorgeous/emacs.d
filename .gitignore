@@ -1,8 +1,11 @@
+auto-save-list/
 elpa/
 eshell/
 games/
+themes/
 recentf
 tramp
 .mc-lists.el
 projectile-bookmarks.eld
 org-clock-save.el
+ac-comphist.dat
