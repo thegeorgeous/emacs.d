@@ -21,7 +21,6 @@
 (load "rails")     ;; Rails related configurations
 (load "frontend")  ;; Configuration for frontend languages
 (load "terminal")  ;; Terminal tool shortcuts
-;;(load "fira-liga") ;; Ligatures for Fira Code
 
 ;; set font family and size
 (custom-set-faces
