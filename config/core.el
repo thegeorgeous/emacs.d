@@ -4,9 +4,6 @@
 
 ;;; Code:
 
-;; start the emacs server
-(server-start)
-
 ;; fix the emacs ui
 (tool-bar-mode -1) ;; No toolbars
 (blink-cursor-mode -1) ;; No blinking cursor
