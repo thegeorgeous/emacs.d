@@ -14,13 +14,14 @@
 
 (add-to-list 'load-path "~/.emacs.d/config")
 
-(load "core")      ;; core Emacs configurations
-(load "move-line") ;; Functionality to move lines
-(load "editor")    ;; Code editor configurations for Emacs
-(load "project")   ;; Project management configurations
-(load "rails")     ;; Rails related configurations
-(load "frontend")  ;; Configuration for frontend languages
-(load "terminal")  ;; Terminal tool shortcuts
+(load "core")             ;; core Emacs configurations
+(load "move-line")        ;; Functionality to move lines
+(load "editor")           ;; Code editor configurations for Emacs
+(load "project")          ;; Project management configurations
+(load "rails")            ;; Rails related configurations
+(load "frontend")         ;; Configuration for frontend languages
+(load "terminal")         ;; Terminal tool shortcuts
+(load "org-config")       ;; Org mode configuration
 
 ;; set font family and size
 (custom-set-faces
@@ -39,22 +40,6 @@
 ;; Emacs-Lisp mode keys
 (bind-keys :map emacs-lisp-mode-map
            ("C-c C-b" . eval-buffer))
-
-;; Org-mode
-(with-eval-after-load 'org
-  (global-set-key (kbd "C-c a t") #'org-todo-list))
-
-;; Org-src-mode
-(declare-function org-edit-src-save "org" nil)
-(declare-function org-edit-src-exit "org" nil)
-(defun org-edit-src-save-and-exit ()
-  "Save org source code edit buffer and exit."
-  (interactive)
-  (org-edit-src-save)
-  (org-edit-src-exit))
-(bind-key "C-c C-e" 'org-edit-src-save-and-exit)
-(setq org-clock-persist 'history)
-(org-clock-persistence-insinuate)
 
 (use-package zop-to-char
   :ensure t)
