@@ -31,8 +31,13 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 140 :family "Fira Code")))))
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/railscasts-reloaded-theme/")
-(load-theme 'railscasts-reloaded t)
+(use-package railscasts-reloaded-theme
+  :ensure t
+  :init
+  (load-theme 'railscasts-reloaded t))
+
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/railscasts-reloaded-theme/")
+;; (load-theme 'railscasts-reloaded t)
 
 ;; Package List shortcut
 (bind-key "C-x p" 'package-list-packages)
