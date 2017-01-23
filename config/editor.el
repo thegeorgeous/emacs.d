@@ -110,12 +110,12 @@
   :bind
   ("s-w" . ace-window))
 
-(use-package dash-at-point
-  :ensure t
-  :bind
-  ("C-c d" . dash-at-point)
-  :config
-  (add-to-list 'dash-at-point-mode-alist '(enh-ruby-mode . "ruby,rubygems,rails")))
+;; (use-package dash-at-point
+;;   :ensure t
+;;   :bind
+;;   ("C-c d" . dash-at-point)
+;;   :config
+;;   (add-to-list 'dash-at-point-mode-alist '(enh-ruby-mode . "ruby,rubygems,rails")))
 
 ;; set flycheck configurations
 (use-package flycheck

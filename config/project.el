@@ -42,13 +42,14 @@
 ;; enable projectile-globally
 (use-package projectile
   :ensure t
+  :init
+  (projectile-global-mode)
   :config
-  (projectile-mode))
-
-(setq projectile-mode-line
+  (setq projectile-mode-line
   '(:eval (if (file-remote-p default-directory)
               " Projectile"
-            (format "[%s]" (projectile-project-name)))))
+            (format "[%s]" (projectile-project-name))))))
+
 
 (use-package helm-ag
   :ensure t)
