@@ -7,7 +7,7 @@
 ;; enable melpa packages
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://stable.melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
@@ -68,4 +68,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet auto-complete zop-to-char zenburn-theme yaml-mode web-mode use-package smartparens rspec-mode rainbow-mode projectile-rails powerline org-pomodoro multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haml-mode guru-mode flycheck-package fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dockerfile-mode dash-at-point crux coffee-mode beacon atom-one-dark-theme anzu ack ace-window))))
+    (rainbow-mode ack zop-to-char railscasts-reloaded-theme web-mode js2-mode coffee-mode haml-mode emmet-mode projectile-rails yaml-mode rspec-mode enh-ruby-mode markdown-mode helm-projectile helm-ag projectile magit helm yasnippet flycheck ace-window avy guru-mode fill-column-indicator multiple-cursors smartparens auto-complete anzu crux beacon powerline exec-path-from-shell use-package))))
