@@ -43,7 +43,7 @@
 (use-package projectile
   :ensure t
   :init
-  (projectile-global-mode)
+  (projectile-mode)
   :config
   (setq projectile-mode-line
   '(:eval (if (file-remote-p default-directory)
