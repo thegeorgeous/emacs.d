@@ -57,6 +57,7 @@
 
 ;; Kill buffers for channels after /part
 (require 'erc)
+(bind-key "C-c i" 'erc)
 (setq erc-kill-buffer-on-part t)
 
 (provide 'init)
