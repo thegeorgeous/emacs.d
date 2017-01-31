@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: logger
+# key: rli
+# group: general
+# --
+Rails.logger.info '***'
+Rails.logger.info
+Rails.logger.info '***'
