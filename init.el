@@ -60,6 +60,9 @@
 (bind-key "C-c i" 'erc)
 (setq erc-kill-buffer-on-part t)
 
+(use-package haskell-mode
+  :ensure t)
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
@@ -69,4 +72,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rainbow-mode ack zop-to-char railscasts-reloaded-theme web-mode js2-mode coffee-mode haml-mode emmet-mode projectile-rails yaml-mode rspec-mode enh-ruby-mode markdown-mode helm-projectile helm-ag projectile magit helm yasnippet flycheck ace-window avy guru-mode fill-column-indicator multiple-cursors smartparens auto-complete anzu crux beacon powerline exec-path-from-shell use-package))))
+    (hacker-typer zop-to-char yasnippet yaml-mode web-mode use-package smartparens rspec-mode rainbow-mode railscasts-reloaded-theme projectile-rails powerline multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haskell-mode haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dash-at-point crux coffee-mode beacon auto-complete anzu ack ace-window))))
