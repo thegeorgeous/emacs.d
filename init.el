@@ -11,10 +11,11 @@
 (add-to-list 'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
-
+(setq custom-file "~/.emacs.d/custom.el")
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (load "core")             ;; core Emacs configurations
+(load "custom")           ;; custom configurations
 (load "move-line")        ;; Functionality to move lines
 (load "editor")           ;; Code editor configurations for Emacs
 (load "project")          ;; Project management configurations
@@ -23,21 +24,13 @@
 (load "terminal")         ;; Terminal tool shortcuts
 (load "org-config")       ;; Org mode configuration
 
-;; set font family and size
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:height 140 :family "Fira Code")))))
+;; (use-package railscasts-reloaded-theme
+;;   :ensure t
+;;   :init
+;;   (load-theme 'railscasts-reloaded t))
 
-(use-package railscasts-reloaded-theme
-  :ensure t
-  :init
-  (load-theme 'railscasts-reloaded t))
-
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/railscasts-reloaded-theme/")
-;; (load-theme 'railscasts-reloaded t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/railscasts-reloaded-theme/")
+(load-theme 'railscasts-reloaded t)
 
 ;; Package List shortcut
 (bind-key "C-x p" 'package-list-packages)
@@ -62,11 +55,3 @@
 
 (provide 'init)
 ;;; init.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (hacker-typer zop-to-char yasnippet yaml-mode web-mode use-package smartparens rspec-mode rainbow-mode railscasts-reloaded-theme projectile-rails powerline multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haskell-mode haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell enh-ruby-mode emmet-mode dash-at-point crux coffee-mode beacon auto-complete anzu ack ace-window))))
