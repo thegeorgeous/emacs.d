@@ -93,7 +93,7 @@
   :ensure t
   :config
   (powerline-default-theme)
-  (setq powerline-default-separator 'alternate))
+  (setq powerline-default-separator 'utf-8))
 
 
 (provide 'core)
