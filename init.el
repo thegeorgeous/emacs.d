@@ -46,9 +46,6 @@
 (bind-keys :map emacs-lisp-mode-map
            ("C-c C-b" . eval-buffer))
 
-(use-package zop-to-char
-  :ensure t)
-
 (use-package ack
   :ensure t)
 
