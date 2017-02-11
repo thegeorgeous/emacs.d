@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: byebug
-# key: by
+# key: deb
 # group: general
 # --
 require 'byebug'
