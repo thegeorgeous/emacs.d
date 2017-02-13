@@ -88,9 +88,12 @@
   :config
   (add-hook 'prog-mode-hook 'fci-mode))
 
-;; For when current line and column display
-;; is out of the screen
-(bind-key "C-c l" 'what-line)
+;; add line numbers
+(defun enable-linum-mode ()
+  "Enable linum mode."
+  (linum-mode 1))
+
+(add-hook 'prog-mode-hook 'enable-linum-mode)
 
 ;; enable guru-global-mode
 (use-package guru-mode
