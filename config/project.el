@@ -36,6 +36,7 @@
   :bind
   ("C-x g" . magit-status)
   ("C-c b" . magit-blame)
+  ("C-c l" . magit-log-buffer-file)
   :config
   (setq git-commit-summary-max-length 50))
 
