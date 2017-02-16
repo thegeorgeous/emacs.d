@@ -11,7 +11,7 @@
 (add-to-list 'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file "~/.emacs.d/config/custom.el")
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (load "core")             ;; core Emacs configurations
