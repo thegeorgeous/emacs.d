@@ -9,6 +9,7 @@
 (defvar org-capture-templates
       '(("t" "Todo" entry (file+headline "~/org/bangthetable-tasks.org" "BTT Tasks")
          "* TODO %?\n  %i\n  %a")))
+(defvar org-log-done 'time)
 
 (defun open-main-org-file()
   "Opens main org file"
