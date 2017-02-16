@@ -59,8 +59,8 @@
   :config
   (require 'auto-complete-config)
   (ac-config-default)
-  (setq ac-ignore-case nil)
-  (add-to-list 'ac-modes 'enh-ruby-mode))
+  (setq ac-ignore-case nil))
+  ;; (add-to-list 'ac-modes 'enh-ruby-mode))
 
 ;; global-smartparens
 (use-package smartparens
@@ -117,9 +117,9 @@
 (use-package dash-at-point
   :ensure t
   :bind
-  ("C-c d" . dash-at-point)
-  :config
-  (add-to-list 'dash-at-point-mode-alist '(enh-ruby-mode . "ruby,rubygems,rails")))
+  ("C-c d" . dash-at-point))
+  ;;:config
+  ;;(add-to-list 'dash-at-point-mode-alist '(enh-ruby-mode . "ruby,rubygems,rails")))
 
 ;; set flycheck configurations
 (use-package flycheck
