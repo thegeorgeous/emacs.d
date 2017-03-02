@@ -137,5 +137,8 @@
 
 (setq vc-follow-symlinks t)
 
+(use-package dockerfile-mode
+  :ensure t)
+
 (provide 'editor)
 ;;; editor.el ends here
