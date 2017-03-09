@@ -20,11 +20,11 @@
   :config
   (setq js-indent-level 2))
 
-;; Use web mode for erb templates
 (use-package web-mode
   :ensure t
   :config
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode)))
 
 (provide 'frontend)
 ;;; frontend.el ends here
