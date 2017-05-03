@@ -140,5 +140,8 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package csv-mode
+  :ensure t)
+
 (provide 'editor)
 ;;; editor.el ends here

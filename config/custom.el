@@ -18,5 +18,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dockerfile-mode yasnippet yaml-mode websocket web-mode use-package smartparens rspec-mode request rainbow-mode railscasts-reloaded-theme projectile-rails powerline org-bullets oauth2 multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haskell-mode haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell enh-ruby-mode emojify emmet-mode dash-at-point crux coffee-mode circe beacon auto-complete anzu alert ack ace-window)))
- )
+    (csv-mode solarized-theme dockerfile-mode yasnippet yaml-mode websocket web-mode use-package smartparens rspec-mode request rainbow-mode railscasts-reloaded-theme projectile-rails powerline org-bullets oauth2 multiple-cursors markdown-mode magit js2-mode helm-projectile helm-ag haskell-mode haml-mode guru-mode flycheck fill-column-indicator exec-path-from-shell enh-ruby-mode emojify emmet-mode dash-at-point crux coffee-mode circe beacon auto-complete anzu alert ack ace-window))))
