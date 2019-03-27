@@ -1,4 +1,4 @@
-# emacs.d
+# emacs.d(No longer maintained!)
 My emacs configuration
 
 [![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg)](http://forthebadge.com)
